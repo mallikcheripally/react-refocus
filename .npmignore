@@ -1,0 +1,15 @@
+.github/
+.idea/
+coverage/
+docs/
+node_modules/
+src/
+reports/
+tests/
+
+.gitignore
+.npmignore
+webpack.config.js
+tsconfig.json
+yarn.lock
+
