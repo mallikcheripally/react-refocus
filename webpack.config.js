@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
@@ -39,6 +40,7 @@ module.exports = {
         ],
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: 'styles.css',
         }),
@@ -50,9 +52,25 @@ module.exports = {
     ],
     optimization: {
         minimize: true,
-        minimizer: [new TerserPlugin()],
+        minimizer: [
+            new TerserPlugin({
+                extractComments: false,
+                terserOptions: {
+                    format: {
+                        comments: /@license/i,
+                    },
+                },
+            }),
+        ],
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
+        alias: {
+            components: path.resolve(__dirname, 'src/components/'),
+            hooks: path.resolve(__dirname, 'src/hooks/'),
+            utils: path.resolve(__dirname, 'src/utils/'),
+            styles: path.resolve(__dirname, 'src/styles/'),
+            context: path.resolve(__dirname, 'src/context/'),
+        },
     },
 };
