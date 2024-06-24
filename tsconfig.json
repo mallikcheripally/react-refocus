@@ -14,7 +14,17 @@
     "isolatedModules": true,
     "declaration": true,
     "declarationDir": "./lib",
-    "outDir": "./lib"
+    "outDir": "./lib",
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
+    "baseUrl": ".",
+    "paths": {
+      "components/*": ["src/components/*"],
+      "hooks/*": ["src/hooks/*"],
+      "utils/*": ["src/utils/*"],
+      "styles/*": ["src/styles/*"],
+      "context/*": ["src/context/*"]
+    }
   },
   "include": ["src"],
   "exclude": ["node_modules", "lib"]
