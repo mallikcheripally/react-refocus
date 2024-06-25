@@ -11,5 +11,7 @@ export { FocusProvider, useFocusContext } from 'context/FocusContext';
 
 // Hooks
 export { useFocusOnMount } from 'hooks/useFocusOnMount';
+export { useFocusOrder } from 'hooks/useFocusOrder';
 export { useFocusReturn } from 'hooks/useFocusReturn';
+export { useFocusVisible } from 'hooks/useFocusVisible';
 export { useFocusWithin } from 'hooks/useFocusWithin';
