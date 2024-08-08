@@ -13,19 +13,15 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "declaration": true,
-    "declarationDir": "./lib",
-    "outDir": "./lib",
+    "declarationDir": "./dist",
+    "outDir": "./dist",
     "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react",
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
-      "components/*": ["src/components/*"],
-      "hooks/*": ["src/hooks/*"],
-      "utils/*": ["src/utils/*"],
-      "styles/*": ["src/styles/*"],
-      "context/*": ["src/context/*"]
+      "@/*": ["*"]
     }
   },
-  "include": ["src"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "lib"]
 }
