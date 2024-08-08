@@ -1,6 +1,6 @@
 import React, { forwardRef, ReactNode } from 'react';
 
-import { isBrowser } from 'utils/environment';
+import { isBrowser } from '@/utils/environment';
 
 /**
  * FocusableProps
