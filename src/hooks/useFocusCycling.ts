@@ -8,10 +8,7 @@ import { useEffect } from 'react';
  * @param {React.RefObject<HTMLElement>} containerRef - The ref of the container element.
  * @param {string[]} [customSelectors=[]] - Additional selectors for custom focusable elements.
  */
-const useFocusCycling = (
-    containerRef: React.RefObject<HTMLElement>,
-    customSelectors: string[] = []
-) => {
+const useFocusCycling = (containerRef: React.RefObject<HTMLElement>, customSelectors: string[] = []) => {
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
             if (!containerRef.current) return;
@@ -23,23 +20,35 @@ const useFocusCycling = (
                 'textarea',
                 'select',
                 'details',
-                '[tabindex]:not([tabindex="-1"])'
+                '[tabindex]:not([tabindex="-1"])',
             ];
 
             const selectors = defaultSelectors.concat(customSelectors).join(',');
-            const focusableElements = Array.from(
-                containerRef.current.querySelectorAll<HTMLElement>(selectors)
-            ).filter((el) => !el.hasAttribute('disabled'));
+            const focusableElements = Array.from(containerRef.current.querySelectorAll<HTMLElement>(selectors)).filter(
+                (el) => !el.hasAttribute('disabled'),
+            );
 
             const currentIndex = focusableElements.indexOf(document.activeElement as HTMLElement);
 
             if (event.key === 'Tab') {
-                if (event.shiftKey && currentIndex === 0) {
-                    focusableElements[focusableElements.length - 1].focus();
-                    event.preventDefault();
-                } else if (!event.shiftKey && currentIndex === focusableElements.length - 1) {
-                    focusableElements[0].focus();
-                    event.preventDefault();
+                if (event.shiftKey) {
+                    // Cycle backward
+                    if (currentIndex === 0) {
+                        focusableElements[focusableElements.length - 1].focus();
+                        event.preventDefault();
+                    } else {
+                        focusableElements[currentIndex - 1].focus();
+                        event.preventDefault();
+                    }
+                } else {
+                    // Cycle forward
+                    if (currentIndex === focusableElements.length - 1) {
+                        focusableElements[0].focus();
+                        event.preventDefault();
+                    } else {
+                        focusableElements[currentIndex + 1].focus();
+                        event.preventDefault();
+                    }
                 }
             }
         };
