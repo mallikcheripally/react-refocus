@@ -136,13 +136,13 @@ const config: Config = {
         language: 'en',
       },
     ],
-    // [
-    //   '@docusaurus/plugin-google-gtag',
-    //   {
-    //     trackingID: '',
-    //     anonymizeIP: true,
-    //   },
-    // ],
+    [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'G-090P1G1DYN',
+        anonymizeIP: true,
+      },
+    ],
     // '@stackql/docusaurus-plugin-structured-data',
   ],
 };
