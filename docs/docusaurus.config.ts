@@ -94,37 +94,37 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
-    structuredData: {
-      excludedRoutes: [], // array of routes to exclude from structured data generation
-      verbose: false, // print verbose output to console
-      featuredImageDimensions: {
-        width: 1200,
-        height: 630,
-      },
-      authors: {
-        author_name: {
-          authorId: 'mallikcheripally',
-          url: 'https://mallikcheripally.com',
-          sameAs: ['https://github.com/mallikcheripally', 'https://www.linkedin.com/in/mallikcheripally/', 'https://www.npmjs.com/~mallikcheripally'],
-        },
-      },
-      organization: {
-        name: 'React Refocus',
-        url: 'https://react-refocus.mallikcheripally.com',
-        logo: 'https://react-refocus.mallikcheripally.com/img/logo.png',
-      },
-      website: {
-        datePublished: '2024-08-09',
-        inLanguage: 'en-US',
-      },
-      webpage: {
-        datePublished: '2024-08-09',
-        inLanguage: 'en-US',
-      },
-      breadcrumbLabelMap: {
-        'introduction': 'Introduction',
-      }
-    },
+    // structuredData: {
+    //   excludedRoutes: [], // array of routes to exclude from structured data generation
+    //   verbose: false, // print verbose output to console
+    //   featuredImageDimensions: {
+    //     width: 1200,
+    //     height: 630,
+    //   },
+    //   authors: {
+    //     author_name: {
+    //       authorId: 'mallikcheripally',
+    //       url: 'https://mallikcheripally.com',
+    //       sameAs: ['https://github.com/mallikcheripally', 'https://www.linkedin.com/in/mallikcheripally/', 'https://www.npmjs.com/~mallikcheripally'],
+    //     },
+    //   },
+    //   organization: {
+    //     name: 'React Refocus',
+    //     url: 'https://react-refocus.mallikcheripally.com',
+    //     logo: 'https://react-refocus.mallikcheripally.com/img/logo.png',
+    //   },
+    //   website: {
+    //     datePublished: '2024-08-09',
+    //     inLanguage: 'en-US',
+    //   },
+    //   webpage: {
+    //     datePublished: '2024-08-09',
+    //     inLanguage: 'en-US',
+    //   },
+    //   breadcrumbLabelMap: {
+    //     'introduction': 'Introduction',
+    //   }
+    // },
   } satisfies Preset.ThemeConfig,
   plugins: [
     [
@@ -143,7 +143,7 @@ const config: Config = {
     //     anonymizeIP: true,
     //   },
     // ],
-    '@stackql/docusaurus-plugin-structured-data',
+    // '@stackql/docusaurus-plugin-structured-data',
   ],
 };
 
