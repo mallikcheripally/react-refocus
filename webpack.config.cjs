@@ -7,7 +7,7 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 module.exports = {
     entry: './src/index.ts',
     output: {
-        path: path.resolve(__dirname, 'lib'),
+        path: path.resolve(__dirname, 'dist'),
         filename: 'index.js',
         library: {
             type: 'module',
@@ -66,11 +66,11 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
         alias: {
-            components: path.resolve(__dirname, 'src/components/'),
-            hooks: path.resolve(__dirname, 'src/hooks/'),
-            utils: path.resolve(__dirname, 'src/utils/'),
-            styles: path.resolve(__dirname, 'src/styles/'),
-            context: path.resolve(__dirname, 'src/context/'),
+            '@/components': path.resolve(__dirname, 'src/components/'),
+            '@/hooks': path.resolve(__dirname, 'src/hooks/'),
+            '@/utils': path.resolve(__dirname, 'src/utils/'),
+            '@/styles': path.resolve(__dirname, 'src/styles/'),
+            '@/context': path.resolve(__dirname, 'src/context/'),
         },
     },
 };
