@@ -1,5 +1,6 @@
 import { useEffect, useRef, RefObject } from 'react';
-import { isBrowser } from 'utils/environment';
+
+import { isBrowser } from '@/utils/environment';
 
 /**
  * useFocusWithin
