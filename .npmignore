@@ -9,7 +9,7 @@ tests/
 
 .gitignore
 .npmignore
-webpack.config.js
+webpack.config.cjs
 tsconfig.json
 yarn.lock
 
