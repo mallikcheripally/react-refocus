@@ -24,9 +24,6 @@
   <a href="https://www.npmjs.com/package/react-refocus">
     <img alt="downloads" src="https://img.shields.io/npm/dm/react-refocus.svg" />
   </a>
-  <a href="https://github.com/prettier/prettier">
-    <img alt="prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg" />
-  </a>
   <a href="https://codecov.io/gh/mallikcheripally/react-refocus">
     <img alt="code coverage" src="https://codecov.io/gh/mallikcheripally/react-refocus/branch/main/graph/badge.svg" />
   </a>
