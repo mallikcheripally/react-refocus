@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
-import { isBrowser } from 'utils/environment';
-import { isFocusable } from 'utils/focusUtils';
+import { isBrowser } from '@/utils/environment';
+import { isFocusable } from '@/utils/focusUtils';
 
 /**
  * useFocusReturn
