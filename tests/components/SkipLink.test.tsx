@@ -67,25 +67,21 @@ describe('SkipLink Component', () => {
         consoleWarnSpy.mockRestore();
     });
 
-    it('prevents default behavior if not in a browser environment', () => {
-        jest.resetModules(); // Reset the module cache
-        // Re-mock isBrowser to return false for this specific test
-        jest.mock('@/utils/environment', () => ({
-            __esModule: true,  // This is important to allow using require in CommonJS
+    it('prevents default behavior if not in a browser environment', async () => {
+        jest.resetModules();
+        jest.doMock('@/utils/environment', () => ({
+            __esModule: true,
             ...jest.requireActual('@/utils/environment'),
             isBrowser: jest.fn(() => false),
         }));
 
-        // Import the component again to apply the new mock
-        const { SkipLink } = require('@/components/SkipLink');
+        const { SkipLink } = await import('@/components/SkipLink');
 
         document.body.innerHTML = `
-            <div id="main-content">Main Content</div>
-        `;
+        <div id="main-content">Main Content</div>
+    `;
 
-        render(
-            <SkipLink href="#main-content">Skip to main content</SkipLink>
-        );
+        render(<SkipLink href="#main-content">Skip to main content</SkipLink>);
 
         const linkElement = screen.getByText('Skip to main content');
 
