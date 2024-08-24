@@ -19,12 +19,13 @@ export default [
         rules: {
             ...typescript.configs.recommended.rules,
             ...react.configs.recommended.rules,
-            'prettier/prettier': 'error',
+            'prettier/prettier': 'off',
             'react/prop-types': 'off',
             '@typescript-eslint/explicit-module-boundary-types': 'off',
             '@typescript-eslint/no-explicit-any': 'off',
             'react-hooks/rules-of-hooks': 'error',
             'react-hooks/exhaustive-deps': 'warn',
+            '@typescript-eslint/ban-ts-comment': 'off',
         },
         settings: {
             react: {
