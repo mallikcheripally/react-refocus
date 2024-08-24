@@ -1,56 +1,42 @@
-import { useEffect, useRef, RefObject } from 'react';
-
+import { useEffect, useRef } from 'react';
 import { isBrowser } from '@/utils/environment';
 
-/**
- * useFocusWithin
- *
- * A custom hook that manages focus within a specified container. It detects if any child element
- * within the container has focus.
- *
- * @returns {RefObject<HTMLElement>} - A ref to attach to the container element.
- *
- * @example
- * ```tsx
- * const MyComponent: React.FC = () => {
- *   const containerRef = useFocusWithin();
- *
- *   return (
- *     <div ref={containerRef}>
- *       <input type="text" placeholder="Focus within me" />
- *       <button>Focusable Button</button>
- *     </div>
- *   );
- * };
- * ```
- */
-export const useFocusWithin = (): RefObject<HTMLElement> => {
+export const useFocusWithin = (): ((element: HTMLElement | null) => void) => {
     const containerRef = useRef<HTMLElement | null>(null);
 
-    useEffect(() => {
+    const handleFocusIn = (event: FocusEvent) => {
+        if (containerRef.current && containerRef.current.contains(event.target as Node)) {
+            containerRef.current.classList.add('focus-within');
+        }
+    };
+
+    const handleFocusOut = (event: FocusEvent) => {
+        if (containerRef.current && !containerRef.current.contains(event.relatedTarget as Node)) {
+            containerRef.current.classList.remove('focus-within');
+        }
+    };
+
+    const setRef = (element: HTMLElement | null) => {
         if (!isBrowser()) return;
+        if (element) {
+            containerRef.current = element;
+            element.addEventListener('focusin', handleFocusIn);
+            element.addEventListener('focusout', handleFocusOut);
+        } else if (containerRef.current) {
+            containerRef.current.removeEventListener('focusin', handleFocusIn);
+            containerRef.current.removeEventListener('focusout', handleFocusOut);
+            containerRef.current = null;
+        }
+    };
 
-        const handleFocusIn = (event: FocusEvent) => {
-            if (containerRef.current && containerRef.current.contains(event.target as Node)) {
-                containerRef.current.classList.add('focus-within');
-            }
-        };
-
-        const handleFocusOut = (event: FocusEvent) => {
-            if (containerRef.current && !containerRef.current.contains(event.relatedTarget as Node)) {
-                containerRef.current.classList.remove('focus-within');
-            }
-        };
-
-        const container = containerRef.current;
-        container?.addEventListener('focusin', handleFocusIn);
-        container?.addEventListener('focusout', handleFocusOut);
-
+    useEffect(() => {
         return () => {
-            container?.removeEventListener('focusin', handleFocusIn);
-            container?.removeEventListener('focusout', handleFocusOut);
+            if (isBrowser() && containerRef.current) {
+                containerRef.current.removeEventListener('focusin', handleFocusIn);
+                containerRef.current.removeEventListener('focusout', handleFocusOut);
+            }
         };
     }, []);
 
-    return containerRef;
+    return setRef;
 };
