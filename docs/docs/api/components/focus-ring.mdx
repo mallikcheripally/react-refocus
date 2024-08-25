@@ -1,0 +1,59 @@
+---
+id: FocusRing
+title: FocusRing
+description: "Learn how to use the FocusRing component in React Refocus to create customizable focus rings around elements. Improve accessibility and enhance the user interface with this flexible component."
+keywords:
+  - react-refocus
+  - react refocus
+  - focus ring
+  - accessibility
+  - customizable focus ring
+  - focus indicator
+  - css focus ring
+  - button focus
+  - button outline
+---
+
+import StructuredData from '@site/src/components/StructuredData';
+
+<StructuredData />
+
+# FocusRing
+
+The `FocusRing` component in React Refocus provides a customizable focus ring around its children elements when they receive focus. This component enhances accessibility by visually indicating which element is currently focused, making it easier for users to navigate the UI.
+
+## Syntax
+
+```jsx
+<FocusRing ringStyle={CSSProperties} className={string}>
+  {children}
+</FocusRing>
+```
+
+### Props
+
+- **`children`** (ReactNode): The content to be rendered inside the `FocusRing`.
+- **`ringStyle`** (CSSProperties, optional): Custom styles for the focus ring. If not provided, a default style with a blue border and soft shadow is applied.
+- **`className`** (string, optional): Additional class names to apply to the `FocusRing` container.
+
+## Example
+
+```jsx
+import React from 'react';
+import { FocusRing } from 'react-refocus';
+
+const ExampleComponent = () => (
+    <FocusRing>
+        <button>Click Me</button>
+    </FocusRing>
+);
+
+export default ExampleComponent;
+```
+
+## Usage
+
+The FocusRing component is useful in scenarios where you want to provide a clear visual focus indicator for interactive elements such as buttons, inputs, and other focusable components. This is especially important for accessibility, ensuring that keyboard users can easily see which element is focused.
+
+> ### Accessibility Note
+> Using a focus ring helps improve the usability of your web application for people who rely on keyboard navigation. Ensure that the focus ring is clearly visible against the background to maintain good contrast and readability.
