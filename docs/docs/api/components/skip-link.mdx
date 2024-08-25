@@ -1,0 +1,65 @@
+---
+id: SkipLink
+title: SkipLink
+description: "Learn how to use the SkipLink component in React Refocus to enhance accessibility by providing a skip link for quick navigation to the main content. Improve usability for keyboard and screen reader users with this simple and effective component."
+keywords:
+  - react-refocus
+  - react refocus
+  - skip link
+  - accessibility
+  - keyboard navigation
+  - react screen reader
+  - react skip to content
+  - navigation accessibility
+  - react main content link
+---
+
+import StructuredData from '@site/src/components/StructuredData';
+
+<StructuredData />
+
+# SkipLink
+
+The `SkipLink` component in React Refocus provides an accessible way for users to quickly navigate to the main content of a page. This is particularly useful for keyboard and screen reader users, allowing them to bypass repetitive navigation links and get straight to the core content.
+
+## Syntax
+
+```jsx
+<SkipLink href="#main-content" className={string}>
+  {children}
+</SkipLink>
+```
+
+### Props
+
+- **`href`** (string): The target ID to skip to (e.g., `#main-content`). This should correspond to an `id` attribute on the target element.
+- **`children`** (ReactNode): The content to be rendered inside the `SkipLink`, usually text such as "Skip to main content".
+- **`className`** (string, optional): Additional class names to apply to the `SkipLink` element for styling purposes.
+
+## Example
+
+```jsx
+import React from 'react';
+import { SkipLink } from 'react-refocus';
+
+const App = () => (
+  <>
+    <SkipLink href="#main-content">Skip to main content</SkipLink>
+    <header>...</header>
+    <nav>...</nav>
+    <main id="main-content">
+      <h1>Main Content</h1>
+      <p>This is the main content of the page.</p>
+    </main>
+  </>
+);
+
+export default App;
+```
+
+## Usage
+
+The `SkipLink` component is a critical accessibility feature, especially for users who rely on keyboards or screen readers. It enables them to bypass repetitive navigation links and other elements to access the main content directly. This improves the usability of your website and ensures compliance with accessibility standards.
+
+> ### Accessibility Note
+> Using a skip link helps improve the navigability of your website for users with disabilities. It ensures that users can quickly and easily skip to the main content without having to tab through all the navigation links, thereby enhancing the overall user experience.
