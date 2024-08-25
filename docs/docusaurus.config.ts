@@ -44,12 +44,41 @@ const config: Config = {
       title: 'React Refocus',
       logo: {
         alt: 'React Refocus',
-        src: 'img/logo.svg',
+        src: 'img/logo.png',
       },
       items: [
         {
+          position: 'right',
+          label: 'Installation',
+          to: 'docs/getting-started/installation',
+        },
+        {
+          position: 'right',
+          label: 'Components',
+          to: 'docs/api/components/Focusable',
+        },
+        {
+          position: 'right',
+          label: 'Context',
+          to: 'docs/api/context/FocusContext',
+        },
+        {
+          position: 'right',
+          label: 'Hooks',
+          to: 'docs/api/hooks/useArrowKeyNavigation',
+        },
+        {
           href: 'https://github.com/mallikcheripally/react-refocus',
           label: 'GitHub',
+          position: 'right',
+        },
+        {
+          href: 'https://www.npmjs.com/package/react-refocus',
+          label: 'npm',
+          position: 'right',
+        },
+        {
+          type: 'search',
           position: 'right',
         },
       ],
@@ -64,8 +93,8 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Introduction',
-              to: '/docs/introduction',
+              label: 'Getting Started',
+              to: '/docs/getting-started/installation',
             },
           ],
         },

@@ -1,0 +1,66 @@
+---
+id: useArrowKeyNavigation
+title: useArrowKeyNavigation
+description: 'Learn how to use the useArrowKeyNavigation hook in React Refocus to enable arrow key navigation through focusable elements. Improve keyboard accessibility and navigation within your React components with this powerful hook.'
+keywords:
+    - react-refocus
+    - react refocus
+    - react arrow key navigation
+    - react keyboard navigation
+    - react arrow keys
+    - react keydown
+    - react keyup
+    - accessibility
+    - keyboard navigation
+    - react arrow keys hook
+    - react keydown hook
+---
+
+import StructuredData from '@site/src/components/StructuredData';
+
+<StructuredData />
+
+# useArrowKeyNavigation
+
+The `useArrowKeyNavigation` hook in React Refocus enables arrow key navigation through focusable elements within a specified container. This hook is essential for enhancing keyboard accessibility, allowing users to navigate through interactive elements using the arrow keys.
+
+## Syntax
+
+```jsx
+useArrowKeyNavigation(containerRef: React.RefObject<`HTMLElement`>, customSelectors?: string[]): void;
+```
+
+### Props
+
+-   **`containerRef`** (React.RefObject&lt;HTMLElement&gt;): The reference to the container element that contains the focusable elements.
+-   **`customSelectors`** (string[], optional): Additional CSS selectors for custom focusable elements within the container. This is useful if you have custom focusable components that aren't covered by the default selectors.
+
+## Example
+
+```jsx
+import React, { useRef } from 'react';
+import { useArrowKeyNavigation } from 'react-refocus';
+
+const ArrowKeyNavigationExample = () => {
+    const containerRef = useRef(null);
+
+    useArrowKeyNavigation(containerRef);
+
+    return (
+        <div ref={containerRef}>
+            <button>Button 1</button>
+            <button>Button 2</button>
+            <button>Button 3</button>
+        </div>
+    );
+};
+
+export default ArrowKeyNavigationExample;
+```
+
+## Usage
+
+The `useArrowKeyNavigation` hook is ideal for scenarios where you need to enhance keyboard navigation within a group of focusable elements such as buttons, input fields, or custom components. It ensures that pressing the arrow keys (ArrowUp, ArrowDown, ArrowLeft, ArrowRight) moves the focus to the next or previous focusable element within the specified container.
+
+> ### Accessibility Note
+> Ensuring proper keyboard navigation is a crucial aspect of web accessibility. By using `useArrowKeyNavigation`, you provide a smoother and more intuitive navigation experience for users who rely on keyboard input.

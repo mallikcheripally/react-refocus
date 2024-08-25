@@ -1,0 +1,65 @@
+---
+id: useHomeEndKeyNavigation
+title: useHomeEndKeyNavigation
+description: "Learn how to use the useHomeEndKeyNavigation hook in React Refocus to enable Home and End key navigation within a container. Enhance user navigation by controlling the focus order in your React components."
+keywords:
+  - react-refocus
+  - react refocus
+  - react home key shortcut
+  - react end key shortcut
+  - react keyboard navigation
+  - react keydown hooks
+  - react keyup hooks
+---
+
+import StructuredData from '@site/src/components/StructuredData';
+
+<StructuredData />
+
+# useHomeEndKeyNavigation
+
+The `useHomeEndKeyNavigation` hook in React Refocus allows you to enable Home and End key navigation within a specified container. This hook is designed to improve keyboard navigation by allowing users to jump to the first or last focusable element within the container using the Home or End keys, respectively.
+
+## Syntax
+
+```jsx
+useHomeEndKeyNavigation(
+    containerRef: React.RefObject<HTMLElement>,
+    customSelectors: string[] = []
+): void;
+```
+
+### Props
+
+- **`containerRef`** (React.RefObject&lt;HTMLElement&gt;): The reference to the container element where the Home and End key navigation should be applied.
+- **`customSelectors`** (string[], optional): Additional selectors for custom focusable elements within the container. By default, the hook targets common focusable elements such as links, buttons, inputs, and textareas.
+
+## Example
+
+```jsx
+import React, { useRef } from 'react';
+import useHomeEndKeyNavigation from 'react-refocus/hooks/useHomeEndKeyNavigation';
+
+const ExampleComponent = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useHomeEndKeyNavigation(containerRef);
+
+  return (
+    <div ref={containerRef} className="navigation-container">
+      <button>Button 1</button>
+      <button>Button 2</button>
+      <button>Button 3</button>
+    </div>
+  );
+};
+
+export default ExampleComponent;
+```
+
+## Usage
+
+The `useHomeEndKeyNavigation` hook is particularly useful for complex UIs with multiple focusable elements, such as forms, modal dialogs, or custom navigation components. By enabling Home and End key navigation, you can significantly enhance the keyboard navigation experience for users, making your application more accessible and user-friendly.
+
+> ### Accessibility Note
+> Enabling Home and End key navigation helps improve the usability of your application for users who rely on keyboard navigation. This feature ensures that users can quickly navigate to the beginning or end of a focusable content area, providing a more intuitive and accessible experience.

@@ -1,0 +1,63 @@
+---
+id: useFocusCycling
+title: useFocusCycling
+description: "Learn how to use the useFocusCycling hook in React Refocus to enable keyboard focus cycling within a container. Enhance user navigation and accessibility with this powerful utility."
+keywords:
+  - react-refocus
+  - react refocus
+  - useFocusCycling
+  - focus cycling
+  - keyboard navigation
+  - focus management
+  - react accessibility
+  - react focus hook
+  - react tab navigation
+---
+
+import StructuredData from '@site/src/components/StructuredData';
+
+<StructuredData />
+
+# useFocusCycling
+
+The `useFocusCycling` hook in React Refocus enables cycling of focus through focusable elements within a container using the keyboard. This hook is particularly useful for managing focus within modal dialogs, menus, or any group of interactive elements.
+
+## Syntax
+
+```jsx
+useFocusCycling(containerRef: React.RefObject<`HTMLElement`>, customSelectors?: string[]): void;
+```
+
+### Props
+
+- **`containerRef`** (React.RefObject&lt;HTMLElement&gt;): A reference to the container element within which the focus cycling should occur.
+- **`customSelectors`** (string[], optional): An array of additional CSS selectors for custom focusable elements. The default selectors include standard focusable elements such as `a`, `button`, `input`, `textarea`, `select`, `details`, and `[tabindex]:not([tabindex="-1"])`.
+
+## Example
+
+```jsx
+import React, { useRef } from 'react';
+import useFocusCycling from 'react-refocus/hooks/useFocusCycling';
+
+const Modal = () => {
+    const modalRef = useRef<HTMLDivElement>(null);
+    useFocusCycling(modalRef);
+
+    return (
+        <div ref={modalRef} tabIndex={-1}>
+            <button>First Button</button>
+            <button>Second Button</button>
+            <button>Third Button</button>
+        </div>
+    );
+};
+
+export default Modal;
+```
+
+## Usage
+
+The `useFocusCycling` hook is commonly used in scenarios where you want to trap focus within a group of interactive elements, such as in a modal dialog, dropdown menu, or any other focusable container. When the user presses the Tab key, the focus will move to the next element in the sequence, and if they press Shift + Tab, the focus will move to the previous element. If the focus reaches the end or the beginning of the list, it will loop around to the other end, ensuring continuous cycling of focus.
+
+> ### Accessibility Note
+> Focus management is a critical aspect of accessibility in web applications. Ensuring that keyboard users can navigate through interactive elements without losing focus is essential for creating an inclusive user experience. The `useFocusCycling` hook helps achieve this by keeping the focus within a defined boundary.

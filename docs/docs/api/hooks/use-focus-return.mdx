@@ -1,0 +1,63 @@
+---
+id: useFocusReturn
+title: useFocusReturn
+description: "Learn how to use the useFocusOrder hook in React Refocus to dynamically manage the tab order of elements. Enhance keyboard navigation and accessibility by controlling the order of focusable elements in your application."
+keywords:
+  - react-refocus
+  - react refocus
+  - useFocusReturn
+  - react restore focus
+  - react focus previous element
+  - react restore focus to previous element
+  - react restore focus hook
+  - how to restore focus to previous element in react
+---
+
+import StructuredData from '@site/src/components/StructuredData';
+
+<StructuredData />
+
+# useFocusReturn
+
+The `useFocusReturn` hook in React Refocus remembers the previously focused element and restores focus to it after certain interactions. This hook is particularly useful in scenarios where focus management is crucial for user experience and accessibility, such as closing modals, navigating through forms, or switching between UI components.
+
+## Syntax
+
+```jsx
+useFocusReturn(): void;
+```
+
+## Example
+
+```jsx
+import React, { useState } from 'react';
+import { useFocusReturn } from 'react-refocus/hooks/useFocusReturn';
+
+const ExampleComponent = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  useFocusReturn();
+
+  return (
+    <div>
+      <button onClick={() => setShowModal(true)}>Open Modal</button>
+      {showModal && (
+        <div>
+          <h2>Modal Title</h2>
+          <p>Modal Content</p>
+          <button onClick={() => setShowModal(false)}>Close Modal</button>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default ExampleComponent;
+```
+
+## Usage
+
+The `useFocusReturn` hook is particularly useful in forms, dialogs, and other complex UIs where you can return the focus to the previously focused element after closing dialogs, modals etc.
+
+> ### Accessibility Note
+> Managing focus correctly is crucial for accessibility. The `useFocusReturn` hook helps improve usability by ensuring that users are returned to their previous position in the UI, reducing confusion and improving the overall experience for keyboard and screen reader users.

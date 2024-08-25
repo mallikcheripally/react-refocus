@@ -1,0 +1,60 @@
+---
+id: useEscapeKeyClose
+title: useEscapeKeyClose
+description: "Learn how to use the useEscapeKeyClose hook in React Refocus to handle Escape key presses and trigger callback functions. Enhance the user experience by providing quick and accessible ways to close dialogs, modals, and other UI elements."
+keywords:
+  - react-refocus
+  - react refocus
+  - escape key hook
+  - useEscapeKeyClose
+  - react close modal on escape
+  - react close dropdown on escape
+  - escape key callback
+  - modal close hook
+  - react handle escape key
+---
+
+import StructuredData from '@site/src/components/StructuredData';
+
+<StructuredData />
+
+# useEscapeKeyClose
+
+The `useEscapeKeyClose` hook in React Refocus is a custom hook designed to handle the Escape key press event and trigger a callback function. This hook is particularly useful for closing dialogs, modals, or any UI component that should be dismissed when the Escape key is pressed.
+
+## Syntax
+
+```jsx
+useEscapeKeyClose(closeCallback: () => void): void;
+```
+
+### Props
+
+- **`closeCallback`** (function): The callback function to execute when the Escape key is pressed.
+
+## Example
+
+```jsx
+import React from 'react';
+import useEscapeKeyClose from 'react-refocus/hooks/useEscapeKeyClose';
+
+const Modal = ({ onClose }: { onClose: () => void }) => {
+    useEscapeKeyClose(onClose);
+
+    return (
+        <div className="modal">
+            <p>Press Escape to close this modal.</p>
+            <button onClick={onClose}>Close</button>
+        </div>
+    );
+};
+
+export default Modal;
+```
+
+## Usage
+
+The `useEscapeKeyClose` hook is useful for improving user experience by providing a quick way to close elements like modals, dialogs, or other overlays using the keyboard. This is especially important for accessibility, allowing users who rely on keyboard navigation to interact with your application effectively.
+
+> ### Accessibility Note
+> Using the Escape key to close interactive elements like modals is a common pattern in web applications. This feature helps make your application more accessible to users with disabilities by providing an intuitive way to dismiss content.

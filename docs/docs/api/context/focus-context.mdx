@@ -1,0 +1,99 @@
+---
+id: FocusContext
+title: FocusContext
+description: "Learn how to use the FocusTrap component in React Refocus to trap focus within a specific container. Enhance accessibility and ensure smooth keyboard navigation with this component."
+keywords:
+  - react-refocus
+  - react refocus
+  - focus context
+  - react focus context
+  - focus management
+  - react focus provider
+  - useFocusContext
+---
+
+import StructuredData from '@site/src/components/StructuredData';
+
+<StructuredData />
+
+# FocusContext
+
+The `FocusContext` in React Refocus provides a context for managing and tracking focus within your application. It enables components to programmatically control which elements are focused, improving accessibility and user experience, especially for keyboard navigation.
+
+## Syntax
+
+```jsx
+<FocusProvider>
+  {children}
+</FocusProvider>
+```
+
+### Props
+
+- **`children`** (ReactNode): The child components that need access to the focus context.
+
+## Example
+
+```jsx
+import React from 'react';
+import { FocusProvider } from 'react-refocus';
+
+const App = () => (
+  <FocusProvider>
+    <YourComponent />
+  </FocusProvider>
+);
+
+export default App;
+```
+
+# useFocusContext
+
+The `useFocusContext` hook provides access to the focus context. It returns the current context value for focus management, including functions to update the focused element and set focus on a specific element.
+
+## Syntax
+
+```jsx
+const { focusedElement, setFocusedElement, focusElement } = useFocusContext();
+```
+
+### Returns
+
+- **`focusedElement`** (HTMLElement | null): The current element that is focused.
+- **`setFocusedElement`** (function): A function to update the focused element.
+- **`focusElement`** (function): A function to set focus on a specified element and update the
+
+## Example
+
+```jsx
+import React from 'react';
+import { useFocusContext } from 'react-refocus';
+
+const YourComponent = () => {
+  const { focusedElement, focusElement } = useFocusContext();
+
+  const handleFocus = () => {
+    const buttonElement = document.getElementById('button1');
+    if (buttonElement) {
+      focusElement(buttonElement);
+    }
+  };
+
+  return (
+    <div>
+      <button id="button1">Button 1</button>
+      <button onClick={handleFocus}>Focus Button 1</button>
+      <p>Currently focused element: {focusedElement?.id}</p>
+    </div>
+  );
+};
+
+export default YourComponent;
+```
+
+## Usage
+
+The `FocusContext` is useful in scenarios where you need to manage focus across multiple components in a React application. It can be particularly helpful in complex UI structures where keyboard accessibility is critical.
+
+> ### Accessibility Note
+> Proper focus management is crucial for accessibility. By using `FocusContext`, you can ensure that focus is handled correctly, especially when dynamically updating content or when certain elements need to receive focus based on user actions.

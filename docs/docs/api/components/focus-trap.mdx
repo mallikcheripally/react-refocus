@@ -1,0 +1,62 @@
+---
+id: FocusTrap
+title: FocusTrap
+description: "Learn how to use the FocusTrap component in React Refocus to trap focus within a specific container. Enhance accessibility and ensure smooth keyboard navigation with this component."
+keywords:
+  - react-refocus
+  - react refocus
+  - focus trap
+  - accessibility
+  - keyboard navigation
+  - react focus trapping
+  - modal focus trap
+  - tab navigation
+  - trap focus
+---
+
+import StructuredData from '@site/src/components/StructuredData';
+
+<StructuredData />
+
+# FocusTrap
+
+The `FocusTrap` component in React Refocus ensures that keyboard navigation remains within a specific container. This component is particularly useful in scenarios such as modals, dialogs, or any other element where you want to trap focus, enhancing accessibility and ensuring smooth user experience.
+
+## Syntax
+
+```jsx
+<FocusTrap className={string}>
+  {children}
+</FocusTrap>
+```
+
+### Props
+
+- **`children`** (ReactNode): The content to be rendered inside the `FocusTrap` component.
+- **`className`** (string, optional): Additional class names to apply to the `FocusTrap` container.
+
+## Example
+
+```jsx
+import React from 'react';
+import { FocusTrap } from 'react-refocus';
+
+const Modal = () => (
+    <FocusTrap>
+        <div role="dialog" aria-modal="true">
+            <h2>Modal Title</h2>
+            <p>This is a modal window. Press Tab to cycle through elements.</p>
+            <button>Close</button>
+        </div>
+    </FocusTrap>
+);
+
+export default Modal;
+```
+
+## Usage
+
+The `FocusTrap` component is used to keep the keyboard focus within a specific container, preventing users from accidentally tabbing out of a modal, dialog, or other controlled UI components. This ensures that all keyboard interactions are confined within the intended area, improving both usability and accessibility.
+
+> ### Accessibility Note
+> Trapping focus within a container is essential in ensuring that users who rely on keyboard navigation can interact with all elements within a dialog or modal without losing focus to other parts of the page. Proper focus management is critical for providing an accessible user experience.
