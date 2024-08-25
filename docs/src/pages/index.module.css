@@ -2,15 +2,7 @@
 
 .heroBanner {
   /*background: linear-gradient(135deg, #555be7, #8c41e9);*/
-  background: linear-gradient(135deg,
-  rgb(227, 153, 18),  /* Orange */
-  rgb(243, 43, 82),   /* Red-Pink */
-  rgb(15, 104, 140),  /* Teal */
-  rgb(10, 207, 217),  /* Cyan */
-  rgb(15, 104, 140),  /* Teal */
-  rgb(243, 43, 82),   /* Red-Pink */
-  rgb(194, 144, 19)   /* Yellow */
-  );
+  background: linear-gradient(135deg, #D93D93, #FD536B, #F25A38, #FF9737, #F2D64B, #4EB3FA);
   color: #fff;
   padding: 4rem 0;
   text-align: center;
