@@ -1,4 +1,4 @@
-import {useEffect, useRef, RefObject, MutableRefObject} from 'react';
+import { useEffect, useRef, MutableRefObject } from 'react';
 
 import { isFocusable } from '@/utils/focusUtils';
 import { isBrowser } from '@/utils/environment';
@@ -11,7 +11,9 @@ import { isBrowser } from '@/utils/environment';
  * @param {boolean} [shouldFocus=true] - Optional boolean to conditionally apply focus.
  * @returns {MutableRefObject<HTMLElement>} - A ref to attach to the element that should receive focus on mount.
  */
-export const useFocusOnMount = <T extends HTMLElement = HTMLElement>(shouldFocus: boolean = true): React.MutableRefObject<T | null> => {
+export const useFocusOnMount = <T extends HTMLElement = HTMLElement>(
+    shouldFocus: boolean = true,
+): React.MutableRefObject<T | null> => {
     const elementRef: MutableRefObject<T | null> = useRef<T | null>(null);
 
     useEffect(() => {
