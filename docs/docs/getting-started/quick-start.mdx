@@ -1,0 +1,86 @@
+---
+id: quick-start
+title: Quick Start
+description: 'Kickstart your project with React Refocus. Follow our quick start guide to master focus management, keyboard navigation, and accessibility enhancements in your React applications.'
+keywords:
+  - react-refocus
+  - react refocus
+  - react focus
+  - focus trapping
+  - react focus trapping
+  - accessibility hooks
+  - react keyboard navigation
+  - react focus order
+  - react focus return
+  - manage focus react
+  - react accessibility
+  - npm react-refocus
+  - install react-refocus
+  - yarn react-refocus
+  - react refocus quick start
+---
+
+import StructuredData from '@site/src/components/StructuredData';
+
+<StructuredData />
+
+### Getting Started
+
+Follow these steps to quickly get started with React Refocus:
+
+### Step 1: Install React Refocus
+
+If you haven't already installed React Refocus, follow the installation instructions:
+
+#### Using npm
+
+```bash
+npm install react-refocus
+```
+
+#### Using Yarn
+
+```bash
+yarn add react-refocus
+```
+
+### Step 2: Import React Refocus Components and Hooks
+
+Once installed, you can import and use components and hooks in your project:
+
+```javascript
+import { FocusRing, useFocusVisible, useEscapeKeyClose } from 'react-refocus';
+
+// Example usage
+const MyComponent = () => {
+    const isFocusVisible = useFocusVisible();
+    const handleClose = () => console.log('Escape key pressed');
+
+    useEscapeKeyClose(handleClose);
+
+    return (
+        <FocusRing>
+            <button>Click Me</button>
+        </FocusRing>
+    );
+};
+
+export default MyComponent;
+```
+
+### Step 3: Explore More Features
+
+Explore the comprehensive features of React Refocus by referring to the detailed API documentation. You can manage focus states, enable keyboard navigation, improve accessibility, and more.
+
+- **Focus Management**: Use hooks like `useFocusVisible`, `useFocusOnMount`, and `useFocusReturn` to manage focus in your components.
+- **Keyboard Navigation**: Enable arrow key navigation, home/end key navigation, and focus cycling with dedicated hooks.
+- **Accessibility**: Ensure your UI is accessible with components like `FocusRing`, `SkipLink`, and `FocusTrap`.
+
+### Additional Resources
+
+For more detailed information, examples, and advanced usage, refer to the following sections:
+
+- [API Reference](../api/components/Focusable)
+- [FAQ](../faq.mdx)
+
+Happy coding with React Refocus!
