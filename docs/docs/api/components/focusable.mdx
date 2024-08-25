@@ -1,0 +1,66 @@
+---
+id: Focusable
+title: Focusable
+description: 'Learn how to use the Focusable component in React Refocus to make any element focusable. Enhance accessibility and manage focus and blur events effectively with this flexible wrapper component.'
+keywords:
+    - react-refocus
+    - react refocus
+    - focusable
+    - accessibility
+    - focus event
+    - check if element is focusable
+    - react focusable element
+    - manage focus
+---
+
+import StructuredData from '@site/src/components/StructuredData';
+
+<StructuredData />
+
+# Focusable
+
+The `Focusable` component in React Refocus is a wrapper that makes any element focusable, enabling you to manage focus and blur events efficiently. This component enhances accessibility by allowing you to handle focus states in a controlled manner, making it easier for users to navigate the UI.
+
+## Syntax
+
+```jsx
+<Focusable
+  tabIndex={number}
+  onFocus={function}
+  onBlur={function}
+  className={string}
+>
+  {children}
+</Focusable>
+```
+
+### Props
+
+-   **`children`** (ReactNode): The content to be rendered inside the `Focusable`.
+-   **`tabIndex`** (number, optional): The `tabIndex` attribute to make the element focusable. Default is `0`.
+-   **`onFocus`** (function, optional): A callback function to handle the focus event.
+-   **`onBlur`** (function, optional): A callback function to handle the blur event.
+-   **`className`** (string, optional): Additional class names to apply to the Focusable container.
+
+## Example
+
+```jsx
+import React from 'react';
+import { Focusable } from 'react-refocus';
+
+const ExampleComponent = () => (
+    <Focusable onFocus={() => console.log('Focused!')} onBlur={() => console.log('Blurred!')}>
+        <button>Click Me</button>
+    </Focusable>
+);
+
+export default ExampleComponent;
+```
+
+## Usage
+
+The Focusable component is useful when you need to manage focus behavior on custom elements or ensure that an element is focusable, particularly when it doesn't inherently receive focus (e.g., div elements). It allows you to attach focus and blur handlers, which can be helpful for managing complex interactions in user interfaces.
+
+> ### Accessibility Note
+> Ensuring that elements are properly focusable is crucial for users who rely on keyboard navigation. The tabIndex attribute plays an essential role in controlling the order of focusable elements, and using custom focus and blur handlers can improve the user experience by providing visual cues or triggering specific actions.
+
