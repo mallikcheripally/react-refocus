@@ -1,0 +1,58 @@
+---
+id: useFocusWithin
+title: useFocusWithin
+description: "Learn how to use the useFocusWithin hook in React Refocus to manage focus within a container element. Ensure smooth keyboard navigation and enhanced user experience by detecting focus within your components."
+keywords:
+  - react-refocus
+  - react refocus
+  - useFocusWithin
+  - react focus management
+  - react focus within
+  - react focus tracking
+  - react focus hook
+---
+
+import StructuredData from '@site/src/components/StructuredData';
+
+<StructuredData />
+
+# useFocusWithin
+
+The `useFocusWithin` hook in React Refocus manages focus within a specified container, helping you to detect when any child element within the container gains or loses focus. This can be particularly useful for implementing advanced focus management behaviors in complex user interfaces, enhancing both accessibility and user experience.
+
+## Syntax
+
+```jsx
+useFocusWithin(): (element: HTMLElement | null) => void;
+```
+
+### Props
+
+- **`element`** (HTMLElement | null): The container element to monitor for focus changes. If `null` is passed, the event listeners are removed.
+
+## Example
+
+```jsx
+import React from 'react';
+import { useFocusWithin } from 'react-refocus/hooks/useFocusWithin';
+
+const ExampleComponent = () => {
+  const setRef = useFocusWithin();
+
+  return (
+    <div ref={setRef} className="focus-container">
+      <input type="text" placeholder="Input 1" />
+      <input type="text" placeholder="Input 2" />
+    </div>
+  );
+};
+
+export default ExampleComponent;
+```
+
+## Usage
+
+The `useFocusWithin` hook is useful for managing and styling elements based on focus state within a container. For example, you might want to highlight a form section when any of its input fields are focused. This hook is especially useful for improving accessibility by making it clear which part of the UI is currently active.
+
+> ### Accessibility Note
+> Proper focus management is crucial for accessible web applications. The `useFocusWithin` hook helps maintain clear and consistent focus indicators, ensuring that keyboard users can easily navigate your application.
