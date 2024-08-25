@@ -1,0 +1,63 @@
+---
+id: useFocusOnMount
+title: useFocusOnMount
+description: "Learn how to use the useFocusOnMount hook in React Refocus to automatically focus on an element when it mounts. Enhance accessibility and streamline user interactions with this simple but effective hook."
+keywords:
+  - react-refocus
+  - react refocus
+  - useFocusOnMount
+  - react auto focus
+  - react accessibility
+  - react focus hook
+  - react focus management
+---
+
+import StructuredData from '@site/src/components/StructuredData';
+
+<StructuredData />
+
+# useFocusOnMount
+
+The `useFocusOnMount` hook in React Refocus automatically sets focus on a referenced element when the component mounts. This hook is particularly useful for improving accessibility and user experience by ensuring that the correct element receives focus immediately upon rendering.
+
+## Syntax
+
+```jsx
+useFocusOnMount(shouldFocus?: boolean): React.MutableRefObject<HTMLElement>;
+```
+
+### Props
+
+- **`shouldFocus`** (boolean, optional): A boolean value indicating whether the element should receive focus upon mount. Defaults to `true`.
+
+### Returns
+
+- **`elementRef`** (React.MutableRefObject&lt;HTMLElement&gt;): A mutable ref object that you attach to the element that should receive focus.
+
+## Example
+
+```jsx
+import React from 'react';
+import { useFocusOnMount } from 'react-refocus/hooks/useFocusOnMount';
+
+const InputComponent = () => {
+  const inputRef = useFocusOnMount<HTMLInputElement>();
+
+  return (
+    <input
+      ref={inputRef}
+      type="text"
+      placeholder="This input will be focused on mount"
+    />
+  );
+};
+
+export default InputComponent;
+```
+
+## Usage
+
+The `useFocusOnMount` hook is commonly used in forms, modals, and other UI components where you want to direct the user's attention to a specific input or button when the component first renders. By automatically setting focus, you can streamline interactions and improve the overall user experience.
+
+> ### Accessibility Note
+> Ensuring that the correct element is focused on mount is crucial for accessibility, particularly for users who rely on keyboard navigation or screen readers. The `useFocusOnMount` hook helps maintain a logical flow of interaction, making your application more inclusive.
