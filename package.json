@@ -23,7 +23,13 @@
     "react",
     "focus",
     "accessibility",
-    "focus management"
+    "focus management",
+    "keyboard navigation",
+    "react focus hooks",
+    "react focus hooks",
+    "a11y",
+    "react accessibility",
+    "react focus"
   ],
   "repository": "https://github.com/mallikcheripally/react-refocus.git",
   "author": "Mallik Cheripally",
