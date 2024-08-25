@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2](https://github.com/mallikcheripally/react-refocus/compare/v0.0.1...v0.0.2) (2024-08-25)
+
+
+### Bug Fixes
+
+* **docs:** update API documentation link ([660a4e7](https://github.com/mallikcheripally/react-refocus/commit/660a4e7747cdfafd3cc9672f4e15a236f7d955a4))
+* **docs:** update library size in introduction ([ec4bcef](https://github.com/mallikcheripally/react-refocus/commit/ec4bcef9bac1639bf179096222c93b7c3ddd017a))
+
+
+### Chores
+
+* **package:** add new keywords for better discoverability ([e4bb144](https://github.com/mallikcheripally/react-refocus/commit/e4bb1442a7f08beb10f9456c2e7b75aa7393f861))
+
 ### [0.0.1](https://github.com/mallikcheripally/react-refocus/compare/v0.0.1-alpha.2...v0.0.1) (2024-08-25)
 
 
