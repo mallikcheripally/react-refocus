@@ -95,7 +95,7 @@ const MyComponent = () => (
 
 ## API Reference
 
-> #### See **[Documentation](https://reactrefocus.mallikcheripally.com)** for complete API reference.
+> #### See **[Documentation](https://react-refocus.mallikcheripally.com)** for complete API reference.
 
 ### Contributing
 
