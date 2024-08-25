@@ -1,0 +1,60 @@
+---
+id: useFocusVisible
+title: useFocusVisible
+description: "Learn how to use the useFocusVisible hook in React Refocus to manage focus visibility, distinguishing between keyboard and mouse interactions. Enhance accessibility and improve user experience by applying focus visibility based on input method."
+keywords:
+  - react-refocus
+  - react refocus
+  - useFocusVisible
+  - react focus visibility
+  - focus visibility
+  - focus accessibility
+---
+
+import StructuredData from '@site/src/components/StructuredData';
+
+<StructuredData />
+
+# useFocusVisible
+
+The `useFocusVisible` hook in React Refocus helps manage focus visibility by distinguishing between keyboard and mouse interactions. This is particularly useful in enhancing accessibility and improving the user experience by ensuring that focus indicators are only shown when navigating via the keyboard.
+
+## Syntax
+
+```jsx
+useFocusVisible(): boolean;
+```
+
+### Returns
+
+- (boolean): A boolean value indicating whether the focus is visible due to keyboard interaction.
+
+## Example
+
+```jsx
+import React from 'react';
+import { useFocusVisible } from 'react-refocus/hooks/useFocusVisible';
+
+const ExampleComponent = () => {
+  const isFocusVisible = useFocusVisible();
+
+  return (
+    <button
+      style={{
+        outline: isFocusVisible ? '2px solid #1E90FF' : 'none',
+      }}
+    >
+      Focus Me
+    </button>
+  );
+};
+
+export default ExampleComponent;
+```
+
+## Usage
+
+The `useFocusVisible` hook is ideal for scenarios where you want to provide a focus indicator that only appears when the user is navigating the interface using a keyboard. This helps to avoid unnecessary focus outlines for mouse interactions, maintaining a clean and user-friendly interface.
+
+> ### Accessibility Note
+> This hook enhances accessibility by ensuring that focus indicators are shown only when needed, reducing visual noise for mouse users while providing essential feedback for keyboard users. Proper focus management is crucial for creating inclusive web applications.
