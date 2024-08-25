@@ -1,0 +1,64 @@
+---
+id: useFocusOrder
+title: useFocusOrder
+description: "Learn how to use the useFocusOrder hook in React Refocus to dynamically manage the tab order of elements. Enhance keyboard navigation and accessibility by controlling the order of focusable elements in your application."
+keywords:
+  - react-refocus
+  - react refocus
+  - useFocusOrder
+  - react focus order
+  - react focus management
+  - react keyboard navigation
+  - ui elements focus order
+  - react tabindex order
+---
+
+import StructuredData from '@site/src/components/StructuredData';
+
+<StructuredData />
+
+# useFocusOrder
+
+The `useFocusOrder` hook in React Refocus allows you to dynamically manage the tab order of an element. By setting the tabIndex property, you can control the sequence in which elements are focused when navigating with the keyboard, improving accessibility and user experience.
+
+## Syntax
+
+```jsx
+useFocusOrder(order: number): React.RefObject<HTMLElement>;
+```
+
+### Props
+
+- **`order`** (number): The tab order for the element. A lower value means the element will be focused earlier, while a higher value will focus it later.
+
+### Returns
+
+- **`elementRef`** (React.RefObject&lt;HTMLElement&gt;): A ref object to be attached to the element whose tab order you want to manage.
+
+## Example
+
+```jsx
+import React from 'react';
+import { useFocusOrder } from 'react-refocus/hooks/useFocusOrder';
+
+const ExampleComponent = () => {
+  const buttonRef = useFocusOrder(1); // This button will be focused first
+  const inputRef = useFocusOrder(2);  // This input will be focused second
+
+  return (
+    <div>
+      <button ref={buttonRef}>First Button</button>
+      <input ref={inputRef} type="text" placeholder="Second Input" />
+    </div>
+  );
+};
+
+export default ExampleComponent;
+```
+
+## Usage
+
+The `useFocusOrder` hook is particularly useful in forms, dialogs, and other complex UIs where you need to ensure that keyboard navigation follows a specific order. By controlling the tab order, you can create a more intuitive and accessible experience for users who rely on keyboard navigation.
+
+> ### Accessibility Note
+> Proper tab order is crucial for accessibility, especially for users who navigate using the keyboard. The `useFocusOrder` hook helps ensure that focusable elements are logically ordered, improving usability and adherence to accessibility standards.
